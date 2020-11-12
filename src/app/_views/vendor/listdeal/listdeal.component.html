@@ -1,0 +1,70 @@
+<app-topnav></app-topnav>
+<div class="content-wrapper">
+  <div class="content-header mt-5">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Deals List</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+<section class="content">
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-12 ">
+    <div class="card card-widget forscroll">
+      <div class="card-header">
+        <div class="user-block">
+          <span class="username"><a href="#">Your Deals list</a></span>
+        </div>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fa fa-window-minimize"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body forsc">
+    <table  datatable [dtOptions]="dtvdlist" class="table-sm row-border hover">
+      <thead>
+        <tr>
+          <th>Deal name</th>
+          <th>Bussnies name</th>
+          <th>Branch name</th>
+          <th>Description</th>
+          <th>Prepration time</th>
+          <th>Price</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let req of vdlist">
+          <td>{{req.name}}</td>
+          <td>{{req.B_name}}</td>
+          <td>{{req.bname}}</td>
+          <td>{{req.description}}</td>
+          <td>{{req.preptime}}</td>
+          <td>{{req.price}}</td>
+          <td ><img src="http://www.cookingpilote.com/img/productimg/{{req.image}}" class="img-fluid" height="50" width="50"  alt=""></td>
+          <td> <button class=" btn text-danger border-0"><i class="fa fa-trash" aria-hidden="true"></i></button>  <button class="btn text-primary border-0"><i class="fa fa-pencil-square" aria-hidden="true"></i></button> </td>
+        </tr>
+
+
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+
+</section>
+</div>
+<dynamic-loader loaderType="rectangle-flip">
+</dynamic-loader>

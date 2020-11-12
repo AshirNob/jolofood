@@ -1,0 +1,105 @@
+<app-navbar></app-navbar>
+<br/><br/>
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-4">
+
+      <div class="card tab-content rounded rounded et-navtabs-pane text-white">
+        <h2 class="font-weight-bold  text-white">Confirm your <span class="text-yellow">Parcel</span></h2>
+      <form class="m-3">
+          <div class="form-group">
+            <label for="">Reciver Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Reciver Name"
+              [(ngModel)]="inputs.reciverName"
+              name="reciverName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Reciver Phone number</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Reciver Phone Number"
+              [(ngModel)]="inputs.reciverPhone"
+              name="senderPhone"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">weight</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Weight of parcel"
+              [(ngModel)]="inputs.weight"
+              name="weight"
+            />
+          </div>
+          <div class="form-group">
+            <label for="#">Note:</label>
+            <textarea
+              name="#"
+              id=""
+              cols="30"
+              class="form-control"
+              rows="4"
+              [(ngModel)]="inputs.note"
+              name="note"
+            ></textarea>
+          </div>
+      </form>
+    </div>
+    </div>
+    <div class="col-md-4">
+<div id="parcelmap"></div>
+    </div>
+    <div class="col-md-4">
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-11">
+                <div class="card">
+                  <h2 class="font-weight-bold ml-5 mt-3 text-dark">Jolo Food <span class="text-yellow">Delivery</span></h2>
+                    <div class="upper p-4">
+                        <div class="d-flex justify-content-between">
+
+                            <div class="d-flex flex-row align-items-center">
+                                <div class="add"> <span class="font-weight-bold d-block">From: {{inputs.pickup_location}}</span> <span class="font-weight-bold d-block"> TO: {{inputs.drop_off_location}}</span> <small>{{date}}</small> </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="delivery">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center"> <i class="fa fa-check-circle-o"></i> <span class="ml-2">Estimated Time for delivery</span> </div> <span class="font-weight-bold">{{inputs.time}} Min(30Km/hr)</span>
+                            </div>
+                        </div>
+                        <div class="transaction mt-2">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center"> <i class="fa fa-check-circle-o"></i> <span class="ml-2">Estimate Distance </span> </div> <span class="font-weight-bold"> {{Edis}} KM</span>
+                            </div>
+                        </div>
+                        <div class="transaction mt-2">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center"> <i class="fa fa-check-circle-o"></i> <span class="ml-2">Driver Available</span> </div> <span class="font-weight-bold">2 </span>
+                            </div>
+                        </div>
+                        <hr>
+
+                    <div class="lower tab-content rounded rounded et-navtabs-pane p-4 py-5 text-white d-flex justify-content-between">
+                        <div class="d-flex flex-column"> <span>Cost and service charges</span> <small>Will be applied after driver confirms your parcel</small> </div>
+                       <button (click)="confirm()" class="btn shadow mt-3 bg-yellow text-capitalize text-white float-right">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+<ngx-spinner bdColor="rgba(51,51,51,0.9)"
+size="medium"
+color="#fff"
+type="timer">
+  <p style="font-size: 20px; color: white">Finding Driver...</p>
+</ngx-spinner>

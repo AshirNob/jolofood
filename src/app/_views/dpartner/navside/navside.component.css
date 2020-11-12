@@ -1,0 +1,14 @@
+.bg-side{
+  background-color: #f0a500;
+  color: white;
+}
+.bg-side a{
+text-decoration:none;
+color:white;
+}
+.bg-side a:hover{
+  color:#3a2811;
+}
+a{
+  cursor: pointer;
+}

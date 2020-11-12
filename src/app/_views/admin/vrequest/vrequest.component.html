@@ -1,0 +1,68 @@
+<app-topbar></app-topbar>
+<div class="content-wrapper">
+  <div class="content-header mt-5">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Vendore request</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+<section class="content">
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-12 ">
+    <div class="card card-widget forscroll">
+      <div class="card-header">
+        <div class="user-block">
+          <span class="username"><a href="#">Jolo Food delivery vendor request</a></span>
+        </div>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fa fa-window-minimize"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body forsc">
+    <table  datatable [dtOptions]="dtvreq" class="table-sm row-border hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Bussnies name</th>
+          <th>Bussnies Address</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let req of vrequests">
+          <td>{{req.firstname}} {{req.middlename}} {{req.lastname}}</td>
+          <td>{{req.email}}</td>
+          <td>{{req.number}}</td>
+          <td>{{req.address}}</td>
+          <td>{{req.B_name}}</td>
+          <td>{{req.B_address}}</td>
+          <td class="text-danger">{{req.status}}</td>
+          <td> <button class="btn btn-sm btn-primary" (click)="approveven(req.id)" >Approve</button></td>
+        </tr>
+
+
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+
+</section>
+</div>

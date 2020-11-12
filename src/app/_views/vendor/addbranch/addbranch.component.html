@@ -1,0 +1,150 @@
+<app-topnav></app-topnav>
+<div class="content-wrapper">
+  <div class="content-header mt-5">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Add Your Branch</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6"></div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <section class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <img
+                height="60"
+                width="60"
+                src="https://www.flaticon.com/svg/static/icons/svg/869/869636.svg"
+                alt="img"
+                class="img-fluid float-left mr-2 mt-n3"
+              />
+              <h3>Fill this form to add bracnh</h3>
+            </div>
+            <div class="card-body">
+              <form
+                #f="ngForm"
+                (submit)="addbranch(f)"
+                enctype="multipart/form-data"
+              >
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="Name">Branche name</label>
+                      <input
+                        type="text"
+                        [(ngModel)]="branch.bname"
+                        name="bname"
+                        placeholder="Branch Name"
+                        #bname="ngModel"
+                        required
+                        class="form-control rounded-0"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="Name">Branche number</label>
+                      <input
+                        type="text"
+                        type="text"
+                        [(ngModel)]="branch.bnum"
+                        name="bnum"
+                        placeholder="Branch number"
+                        #bnum="ngModel"
+                        required
+                        class="form-control rounded-0"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="Name">Branche Food type</label>
+                      <input
+                        type="text"
+                        [(ngModel)]="branch.foodtype"
+                        name="bnum"
+                        placeholder="Branch foodtype"
+                        #foodtype="ngModel"
+                        required
+                        class="form-control rounded-0"
+                      />
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="start">Opening time</label>
+                          <input
+                            type="time"
+                            [(ngModel)]="branch.opentime"
+                            name="opentime"
+                            placeholder="Branch opentime"
+                            #opentime="ngModel"
+                            required
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="start">Closing time</label>
+                          <input type="time"
+                          [(ngModel)]="branch.closetime"
+                          name="closetime"
+                          placeholder="Branch closetime"
+                          #closetime="ngModel"
+                          required
+                          class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="picture">Choose branch picture</label>
+                      <input type="file"
+                      name="image"
+                      placeholder="Branch image"
+                     (change)="selectbimage($event)"
+                      required
+                      class="form-control rounded-0" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="Name">Branche address</label>
+                      <input type="text"
+                      [(ngModel)]="branch.address"
+                      name="address"
+                      placeholder="Branch address"
+                      #address="ngModel"
+                      required
+                      class="form-control rounded-0 mb-1" />
+                      <small
+                        >Please Fill both text box and choose from map you
+                        branch location</small
+                      >
+                      <div id="mapid"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <input
+                  type="submit"
+                  class="btn btn-success rounded-0 float-right"
+                />
+              </form>
+            </div>
+            <div class="card-footer">
+              <small>Please fill this form carefully</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<dynamic-loader loaderType="rectangle-flip">
+</dynamic-loader>

@@ -1,0 +1,55 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<header class="section-header fixed-top">
+  <section class="header-main border-bottom">
+      <div class="container-fluid">
+          <div class="row align-items-center">
+              <div class="col-lg-3 col-sm-4 col-md-4 col-5"> <a href="" class="brand-wrap text-white" data-abc="true">
+                      <img class="logo" width="50"  src="https://www.flaticon.com/svg/static/icons/svg/862/862856.svg" class="text-white"> Jolo Food's </a></div>
+              <div class="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
+                  <form action="#" class="search-wrap">
+                      <div class="input-group w-100"> <input type="text" class="form-control search-form" style="width:55%;" placeholder="Search food">
+                          <div class="input-group-append"> <button class="btn btn-primary search-button" type="submit"> <i class="fa fa-search"></i> </button> </div>
+                      </div>
+                  </form>
+              </div>
+              <div class="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
+                  <div class="d-flex justify-content-end">
+                      <a target="_blank" href="https://api.whatsapp.com/send/?phone=923043764310" data-abc="true" class="nav-link widget-header"> <i class="fas fa fa-whatsapp"></i></a> <span class="vl"></span>
+                      <a target="_blank" (click)="goto('cart')"  data-abc="true" class="nav-link widget-header"> <i class="fas fa fa-shopping-cart"></i> {{cart}} </a> <span class="vl"></span>
+                       <span class="vl"></span> <a *ngIf="!check" class="nav-link nav-user-img"  (click)="goto('login')" ><span class="login">Login</span></a>
+                       <span class="vl"></span><a *ngIf="check" class="nav-link nav-user-img" (click)="goto('userdashboard')" ><span class="login"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span></a>
+                       <span class="vl"></span><a *ngIf="vcheck" class="nav-link nav-user-img" (click)="goto('vdashboard')" ><span class="login"><i class="fa fa-pie-chart" aria-hidden="true"></i></span></a>
+                       <span class="vl"></span><a *ngIf="dpcheck" class="nav-link nav-user-img" (click)="goto('dpdasboard')" ><span class="login"><i class="fa fa-pie-chart" aria-hidden="true"></i></span></a>
+                       <span class="vl"></span><a *ngIf="dcheck" class="nav-link nav-user-img" (click)="goto('vdashboard')" ><span class="login"><i class="fa fa-pie-chart" aria-hidden="true"></i></span></a>
+                       <span class="vl"></span><a *ngIf="acheck" class="nav-link nav-user-img" (click)="goto('admin')" ><span class="login"><i class="fa fa-pie-chart" aria-hidden="true"></i></span></a>
+                       <span class="vl"></span><a *ngIf="check" class="nav-link nav-user-img" (click)="logout('login')" ><span class="login"><i class="fa fa-sign-out" aria-hidden="true"></i></span></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <nav class="navbar navbar-expand-md navbar-main border-bottom ">
+      <div class="container-fluid">
+          <form class="d-md-none my-2">
+              <div class="input-group"> <input type="search" name="search" class="form-control" placeholder="Search food" required="">
+                  <div class="input-group-append"> <button type="submit" class="btn btn-secondary"> <i class="fa fa-search"></i> </button> </div>
+              </div>
+          </form> <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#dropdown6" aria-expanded="false"> <span class="navbar-toggler-icon"></span> </button>
+          <div class="navbar-collapse collapse" id="dropdown6" style="font-size: medium;">
+              <ul class="navbar-nav mr-auto">
+                  <!-- <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" data-abc="true" aria-expanded="false">Laptops</a>
+                      <div class="dropdown-menu"> <a class="dropdown-item" href="" data-abc="true">Lenovo</a> <a class="dropdown-item" href="" data-abc="true">Dell</a> <a class="dropdown-item" href="" data-abc="true">HP</a> <a class="dropdown-item" href="" data-abc="true">Apple</a> </div>
+                  </li> -->
+                  <li class="nav-item"> <a class="nav-link" (click)="goto('')"  data-abc="true">Home</a></li>
+                  <li class="nav-item"> <a class="nav-link" (click)="goto('foods')"  data-abc="true">Food</a></li>
+                  <li class="nav-item"> <a class="nav-link"  data-abc="true">Deals</a></li>
+                  <li class="nav-item"> <a class="nav-link" (click)="goto('AboutUs')" data-abc="true">About us</a></li>
+                  <li class="nav-item"> <a class="nav-link"  (click)="goto('faqs')" data-abc="true">Faq's</a></li>
+                  <li class="nav-item"> <a class="nav-link" (click)="goto('contactus')" data-abc="true">Contact us</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</header>
+<br><br><br>

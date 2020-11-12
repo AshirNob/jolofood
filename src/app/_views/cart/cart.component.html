@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<br/><br/>
+<div class="card">
+  <div class="row">
+    <div class="col-md-8 cart">
+      <div class="title">
+        <div class="row">
+          <div class="col">
+            <h4><b>Shopping Cart</b></h4>
+          </div>
+          <div class="col align-self-center text-right text-muted">
+            {{totalitem}} items
+          </div>
+        </div>
+      </div>
+      <div class="row border-top border-bottom" *ngFor="let ca of cart;let i=index;">
+        <div class="row main align-items-center">
+          <div class="col-2">
+
+            <img class="img-fluid" src='http://www.cookingpilote.com/img/productimg/{{ca.image}}' />
+          </div>
+          <div class="col">
+            <div class="row">{{ca.name}}</div>
+            <div class="row text-muted">{{ca.description}}</div>
+
+          </div>
+          <div class="col">
+            <a (click)="delquantity(ca,i)">-</a><a class="border">{{ca.quantity}}</a
+            ><a  (click)="addquantity(ca,i)">+</a>
+          </div>
+          <div class="col">
+            $ {{ca.price}} <span class="close">  <a style="font-size: 1.5rem;" (click)="removeitem(ca,i)">&#10005;</a> </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="back-to-shop">
+        <a href="#"  >&#x02190;</a
+        ><span class="text-muted">Back to shop</span>
+      </div>
+    </div>
+    <div class="col-md-4 summary">
+      <div>
+        <h5><b>Summary</b></h5>
+      </div>
+      <hr />
+      <form>
+        <p>GIVE CODE</p>
+        <small >If you have a referall code otherwise you will be charged as normal</small>
+        <input id="code" placeholder="Enter your code" />
+      </form>
+      <p>Drop of location</p>
+      <small>Click on the exact location or point to pick up food</small>
+      <div id="cartmap"></div>
+      <div class="row" style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0">
+        <div class="col">TOTAL PRICE</div>
+        <div class="col text-right" style="font-size: larger; font-weight: bold; color: black;">$ {{totalpriceshow}} </div>
+      </div>
+      <button class="btn" (click)="sendthis()" >Proceed to check out</button>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<app-navtop></app-navtop>
+
+<div class="content-wrapper">
+  <div class="content-header mt-5">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Driver List</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+<section class="content">
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-12 ">
+    <div class="card card-widget forscroll">
+      <div class="card-header">
+        <div class="user-block">
+          <span class="username"><a href="#">Jolo Food delivery driver  List</a></span>
+        </div>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fa fa-window-minimize"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body forsc">
+    <table  datatable [dtOptions]="dtdlist" class="table-sm row-border hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Vehical no</th>
+          <td>Driver image</td>
+          <td>Refralcode</td>
+          <td>Vehical paper</td>
+          <td>Driver License</td>
+          <td>Driver CNIC</td>
+          <td>Vehical img</td>
+          <td>Driver cnic</td>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let req of listDrivers">
+          <td>{{req.firstname}} {{req.middlename}} {{req.lastname}}</td>
+          <td>{{req.email}}</td>
+          <td>{{req.number}}</td>
+          <td>{{req.address}}</td>
+          <td class="text-danger">{{req.V_no}}</td>
+          <td>{{req.profilepicture}}</td>
+          <td>{{req.refralcode}}</td>
+          <td>{{req.V_paper}}</td>
+          <td>{{req.D_license}}</td>
+          <td>{{req.D_cnic}}</td>
+          <td>{{req.V_img}}</td>
+          <td>{{req.D_cnic}}</td>
+          <td> <button class=" btn text-danger border-0"><i class="fa fa-trash" aria-hidden="true"></i></button>  <button class="btn text-primary border-0"><i class="fa fa-pencil-square" aria-hidden="true"></i></button> </td>
+        </tr>
+
+
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+
+</section>
+</div>

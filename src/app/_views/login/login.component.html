@@ -1,0 +1,41 @@
+<h1 class="error">Jollo Food Delivery Login Form</h1>
+<div class="w3layouts-two-grids">
+    <div class="mid-class">
+        <div class="txt-left-side">
+            <h2 class="text-white"> Login Here </h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
+            <form #log="ngForm" (submit)="onlogin(log)">
+                <div class="form-left-to-w3l">
+                    <input  [(ngModel)]="login.email" #email="ngModel" type="email" name="email" placeholder="Email" required>
+
+                    <div class="clear"></div>
+                    <div *ngIf="email.invalid && (log.submitted || email.touched || email.dirty)" class="text-danger"><small>Email is requird or wronge pattren</small></div>
+                </div>
+                <div class="form-left-to-w3l ">
+                    <input [(ngModel)]="login.pass" #pass="ngModel" type="password" name="pass" placeholder="Password" required >
+                    <div class="clear"></div>
+                    <div *ngIf="pass.invalid && (log.submitted || pass.touched)" class="text-danger"><small>Password is requird</small></div>
+                </div>
+                <div class="btnn">
+                    <button type="submit">Login </button>
+                </div>
+            </form>
+            <div class="w3layouts_more-buttn">
+                <h3>Don't Have an account..?
+                    <a href="signup">Register Here
+                    </a>
+                </h3>
+            </div>
+
+        </div>
+        <div class="img-right-side">
+            <h3>Welcome To Jollo Food Delivery Login  Form</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
+            <img src="../../assets/fast-food.png" class="img-fluid" alt="">
+            <div class="btnn">
+                <a type="button" href="">Go Back </a>
+            </div>
+        </div>
+
+    </div>
+</div>

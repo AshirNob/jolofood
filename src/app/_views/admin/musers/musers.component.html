@@ -1,0 +1,68 @@
+<app-topbar></app-topbar>
+  <div class="content-wrapper">
+    <div class="content-header mt-5">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Manager User</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+<section class="content">
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="card card-widget forscroll">
+        <div class="card-header">
+          <div class="user-block">
+            <span class="username"><a href="#">Jolo Food delivery users details</a></span>
+          </div>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fa fa-window-minimize"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+      <table  datatable [dtOptions]="dtOptions" class="table-sm row-border hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Refral Code</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.firstname}} {{user.middlename}} {{user.lastname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.number}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.refralcode}}</td>
+            <td class="text-primary">Active</td>
+            <td> <button class=" btn text-danger border-0"><i class="fa fa-trash" aria-hidden="true"></i></button>  <button class="btn text-primary border-0"><i class="fa fa-pencil-square" aria-hidden="true"></i></button> </td>
+          </tr>
+
+
+
+        </tbody>
+      </table>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+</section>
+</div>

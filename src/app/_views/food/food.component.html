@@ -1,0 +1,51 @@
+<section class="container-fluid bg-alter et-cuisines">
+  <div class="section-heading text-center mb-3">
+    <span class="icon-food d-block h1 mb-2"></span>
+    <h2 class="text-uppercase">Order  <span class="text-yellow">foods</span></h2>
+    <p class="description mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing <br> elit, sed do eiusmod tempor</p>
+  </div>
+  <div class="container">
+    <div class="row">
+<div class="col-md-4 mt-5" *ngFor="let food of foo">
+  <div class="item">
+    <div class="shadow-box bg-white p-0 restaurant">
+      <div class="restaurant-thumbnail p-3 position-relative">
+        <small class="et-badge pl-2 pr-2 bg-yellow text-white position-absolute">New Food</small>
+        <img src="../../../assets/img/restaurant-thumbnail-1.jpg" class="img-fluid" alt="mg">
+        <div class="restaurant-logo rounded-pill shadow overflow-hidden">
+          <img src="../../../assets/img/restaurant--1.png" alt="img" class="img-fluid">
+        </div>
+      </div>
+      <div class="p-4">
+        <h4 class="font-weight-bold"><a href="detail.html" class="text-reset text-capitalize text-decoration-none link-hover">{{food.name}}</a></h4>
+        <p class="description">
+          {{food.desc}}
+        </p>
+        <hr>
+        <div class="d-flex align-items-center justify-content-center">
+          <span class="meta pr-1 pl-1 d-inline-flex align-items-center" data-toggle="tooltip" data-placement="bottom" title="Max. delivery time">
+            <i class="rounded-pill mr-1 icon-bg bg-white">
+              <img src="../../../assets/img/icons/scooter.png" class="f-icon" alt="img">
+            </i>
+            <label class="align-bottom mb-0">{{food.preptime}}min.</label>
+          </span>
+
+          <div class="meta text-left d-inline-flex align-items-center pr-1 pl-1">
+            <i class="rounded-pill mr-1 icon-bg bg-white">
+              <img src="https://www.flaticon.com/svg/static/icons/svg/2933/2933116.svg" class="f-icon" alt="img">
+            </i>
+            <label class="align-bottom mb-0">${{food.price}}</label>
+          </div>
+        </div>
+        <a  class="btn shadow mt-3 mb-2  mr-3 bg-yellow text-capitalize text-white" (click)="addtocart(food.id)" >order</a>
+        <a href="detail.html" class="btn mt-3 mb-2 bg-transparent border-yellow border text-capitalize text-reset">explore</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+</section>
+<dynamic-loader loaderType="rectangle-flip">
+</dynamic-loader>

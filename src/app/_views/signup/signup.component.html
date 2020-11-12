@@ -1,0 +1,111 @@
+<h1 class="error">Jolo Food delivery sign up form</h1>
+<div class="w3layouts-two-grids">
+  <div class="mid-class">
+    <div class="txt-left-side">
+      <h2>Sign up</h2>
+      <form #f="ngForm" (submit)="onAddsubmit(f)" enctype="multipart/form-data">
+        <div class="form-left-to-w3l">
+          <input
+            type="text"
+            [(ngModel)]="user.firstname"
+            name="firstname"
+            placeholder="First name"
+            #firstName="ngModel"
+            required
+          />
+          <div *ngIf="firstName.invalid && (f.submitted || firstName.touched)">Name is required</div>
+          <input
+            type="text"
+            [(ngModel)]="user.middlename"
+            name="middlename"
+            placeholder="Middle name"
+            #middlename="ngModel"
+            required
+          />
+          <input
+            type="text"
+            [(ngModel)]="user.lastname"
+            name="lastname"
+            placeholder="Last name"
+            #lastname="ngModel"
+            required
+          />
+          <div class="clear"></div>
+        </div>
+        <div class="form-left-to-w3l">
+          <input
+            type="text"
+            [(ngModel)]="user.location"
+            name="location"
+            placeholder="Your Address"
+            #address="ngModel"
+            required=""
+          />
+          <div class="clear"></div>
+        </div>
+        <div class="form-left-to-w3l">
+          <input
+            type="number"
+            [(ngModel)]="user.number"
+            name="number"
+            placeholder="Your number"
+            #number="ngModel"
+            required=""
+          />
+          <div class="clear"></div>
+        </div>
+        <div class="form-left-to-w3l">
+          <input
+            type="email"
+            [(ngModel)]="user.email"
+            name="email"
+            placeholder="Email"
+            #email="ngModel"
+            required
+          />
+          <div class="clear"></div>
+        </div>
+        <div class="form-left-to-w3l">
+          <input
+            type="password"
+            [(ngModel)]="user.pass"
+            name="pass"
+            placeholder="Password"
+            required
+          />
+          <div class="clear"></div>
+        </div>
+        <div class="form-left-to-w3l">
+          <input
+            type="file"
+            class="text-white"
+            (change)="selectImage($event)"
+            name="profilepicture"
+            required=""
+          />
+          <div class="clear"></div>
+        </div>
+        <div class="btnn">
+          <button type="submit">Signup</button>
+        </div>
+      </form>
+      <div class="w3layouts_more-buttn">
+        <h3>
+          Do you have an account..?
+          <a href="login">Login Here </a>
+        </h3>
+      </div>
+    </div>
+    <div class="img-right-side">
+      <h3>Welcome To Jollo Food Delivery Sign up Form</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget
+      </p>
+      <img src="../../assets/fast-food.png" class="img-fluid" alt="" />
+      <div class="btnn">
+        <a type="button" href="">Go Back </a>
+      </div>
+    </div>
+  </div>
+</div>

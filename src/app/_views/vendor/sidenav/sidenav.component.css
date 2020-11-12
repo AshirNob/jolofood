@@ -1,0 +1,11 @@
+.bg-side{
+  background-color: #f2722a;
+  color: white;
+}
+.bg-side a{
+text-decoration:none;
+color:white;
+}
+.bg-side a:hover{
+  color:#3a2811;
+}

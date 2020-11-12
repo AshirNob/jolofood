@@ -1,0 +1,228 @@
+<app-navtop></app-navtop>
+
+<div class="content-wrapper">
+  <div class="content-header mt-5">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Add Driver</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6"></div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-widget forscroll">
+            <div class="card-header">
+              <div class="user-block">
+                <span class="username"
+                  ><a href="#"
+                    >Jolo Food delivery Add driver Partner Form</a
+                  ></span
+                >
+              </div>
+              <div class="card-tools">
+                <button
+                  type="button"
+                  class="btn btn-tool"
+                  data-card-widget="collapse"
+                >
+                  <i class="fa fa-window-minimize"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <form
+                #f="ngForm"
+                (submit)="addDriver(f)"
+                enctype="multipart/form-data"
+              >
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="First Name"> First name</label>
+                      <input
+                        type="text"
+                        class="form-control rounded-0"
+                        placeholder="Firstname"
+                        name="firstname"
+                        [(ngModel)]="Driver.firstname"
+                        #firstname="ngModel"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="Middle Name"> Middle name</label>
+                      <input
+                        type="text"
+                        class="form-control rounded-0"
+                        placeholder="Middle name"
+                        name="middlename"
+                        [(ngModel)]="Driver.middlename"
+                        #middlename="ngModel"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="Last Name"> Last name</label>
+                      <input
+                        type="text"
+                        class="form-control rounded-0"
+                        placeholder="Last name"
+                        name="lastname"
+                        [(ngModel)]="Driver.lastname"
+                        #lastname="ngModel"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="Phone number">Phone/Contact number</label>
+                      <input
+                        type="number"
+                        class="form-control rounded-0"
+                        placeholder="Phone/Contact number"
+                        name="number"
+                        [(ngModel)]="Driver.number"
+                        #number="ngModel"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="Address">Addres</label>
+                      <input
+                        type="text"
+                        class="form-control rounded-0"
+                        placeholder="Phone/Contact number"
+                        name="location"
+                        [(ngModel)]="Driver.location"
+                        #location="ngModel"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="Email"> Email</label>
+                      <input
+                        type="email"
+                        class="form-control rounded-0"
+                        placeholder="Email"
+                        name="email"
+                        [(ngModel)]="Driver.email"
+                        #email="ngModel"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="Password">Password</label>
+                      <input
+                        type="password"
+                        class="form-control rounded-0"
+                        placeholder="Password"
+                        name="pass"
+                        [(ngModel)]="Driver.pass"
+                        #pass="ngModel"
+                        required
+                      />
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="Profile"> Profile Picture/Driver image</label><br />
+                          <input
+                            type="file"
+                            placeholder="Profile picture"
+                            required
+                            (change)="driverimg($event)"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="Profile">Vehical Image </label><br />
+                          <input
+                            type="file"
+                            placeholder="Profile picture"
+                            required
+                            (change)="V_img($event)"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="Profile"> Vehical paper</label><br />
+                          <input
+                            type="file"
+                            placeholder="Profile picture"
+                            required
+                            (change)="V_paper($event)"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="Profile"> Driver's Driving license</label><br />
+                          <input
+                            type="file"
+                            placeholder="Profile picture"
+                            required
+                            (change)="D_license($event)"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="Profile"> Driver's National Identity card</label><br />
+                          <input
+                            type="file"
+                            placeholder="Profile picture"
+                            required
+                            (change)="D_cnic($event)"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="Profile"> Vehical number</label><br />
+                          <input
+                            type="text"
+                            placeholder="vehical number"
+                            required
+                            class="form-control rounded-0"
+                            name="V_no"
+                            [(ngModel)]="Driver.V_no"
+                            #V_no="ngModel"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <input
+                  type="submit"
+                  value="Submit"
+                  class="btn btn-success float-right rounded-0"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<dynamic-loader loaderType="rectangle-flip">
+</dynamic-loader>

@@ -1,0 +1,155 @@
+<app-navbar></app-navbar>
+<div class="container-fluid et-cuisines mb-1">
+  <div class="container position-relative">
+    <div class="row">
+      <div
+        class="col-md-5 mt-5 mt-md-0 tab-content rounded rounded et-navtabs-pane"
+      >
+        <div class="tab-content mt-5">
+          <h1 class="font-weight-bold text-white">
+            Send your <span class="text-yellow">Parcel</span>
+          </h1>
+          <form
+            #f="ngForm"
+            (submit)="getmove(f)"
+            enctype="multipart/form-data"
+            class="mt-5"
+          >
+            <div class="form-group mt-4">
+              <label for="Select" class="text-white float-left"
+                >Pickup loactoin</label
+              >
+              <input
+                type="text"
+                placeholder="pickup location"
+                class="form-control bg-white border-white"
+                [(ngModel)]="inputs.pickup_location"
+                name="pickuppoint"
+                #pickuppoint="ngModel"
+                required
+              />
+            </div>
+            <div class="form-group mt-4">
+              <label for="Select" class="text-white float-left"
+                >Drop off location</label
+              >
+              <input
+                type="text"
+                placeholder="Drop off location"
+                class="form-control bg-white border-white"
+                [(ngModel)]="inputs.drop_off_location"
+                name="dropoffpoint"
+                #dropoffpoint="ngModel"
+                required
+              />
+            </div>
+            <div class="form-group mt-4">
+              <label for="Select" class="text-white float-left"
+                >Weight of parcel</label
+              >
+              <input
+                type="number"
+                placeholder="Weight in KG/GRAMS"
+                class="form-control bg-white border-white"
+                [(ngModel)]="inputs.weight"
+                name="weight"
+                #weight="ngModel"
+                required
+              />
+            </div>
+            <input
+            *ngIf="checklogin"
+              type="submit"
+              value="contineu"
+              class="btn shadow mt-3 bg-yellow text-capitalize text-white float-right"
+            />
+<button (click)="goto('login')" class="btn shadow mt-3 bg-yellow text-capitalize text-white float-right" *ngIf="!checklogin">Please signup/login first</button>
+
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-1"></div>
+      <div class="col-md-6">
+        <div class="contact-info">
+          <div class="widget-content p-4 bg-white">
+            <div class="row mb-5">
+              <div class="col-md-4">
+                <div class="text-center pr-sm-3">
+                  <img
+                    src="../../../assets/img/restaurant-logo-2.png"
+                    class="d-block m-auto"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="text-center pr-sm-3">
+                  <img
+                    src="../../../assets/img/restaurant-logo-1.png"
+                    class="d-block m-auto"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="text-center pr-sm-3">
+                  <img
+                    src="../../../assets/img/restaurant-logo-3.png"
+                    class="d-block m-auto"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+
+              <h3 class="font-weight-bold text-yellow pl_center">
+                Order Best Cooked Food
+              </h3>
+            </div>
+
+            <div class="content-heading position-relative mb-4">
+              <h1
+                class="text-yellow position-relative m-0 text-capitalize border d-inline-block rounded p-3 bg-white small font-weight-bold"
+              >
+                OR
+              </h1>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-4">
+                <div class="text-center pr-sm-3">
+                  <img
+                    src="../../../assets/img/coupons.png"
+                    class="d-block m-auto"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="text-center pr-sm-3">
+                  <img
+                    src="../../../assets/img/money.png"
+                    class="d-block m-auto"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="text-center pr-sm-3">
+                  <img
+                    src="../../assets/img/sale.png"
+                    class="d-block m-auto"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+
+              <h3 class="font-weight-bold text-yellow pl_center">
+                Checkout our best deals
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
